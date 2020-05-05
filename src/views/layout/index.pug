@@ -4,6 +4,10 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/lux/bootstrap.min.css", rel="stylesheet", integrity="sha384-oOs/gFavzADqv3i5nCM+9CzXe3e5vXLXZ5LZ7PplpsWpTCufB7kqkTlC9FtZ5nJo", crossorigin="anonymous")
+    link(rel="stylesheet", href="node_modules/text-security/text-security.css")
+    link(rel='stylesheet', href='css/main.css')
   body
-    block content
+    include ../partials/navigation
+    .container.p-4
+      block content

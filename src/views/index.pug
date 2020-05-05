@@ -1,5 +1,23 @@
 extends ./layout/index
 
 block content
-  h1= title
-  p Welcome to #{title}
+  //- h1= title
+  //- p Welcome to #{title}
+  .row
+    .col-md-4
+      form(action="/send-sms" method="post" class="card card-body")
+        .form-group
+          input(type="text" name="message" class="form-control" placeholder="Write your message" autofocus)
+        .form-group
+          input(type="tel" name="phone" class="form-control" placeholder="+34666666666" autocomplete="off")
+        button.btn.btn-primary.btn-block(type='submit') Send
+    .col-md-8.card    
+      if messages        
+        h2 List messages
+        ul
+          each message in messages
+            .card.card-body
+              p= message.Body
+              span= message.To
+      else 
+        p No messages yet

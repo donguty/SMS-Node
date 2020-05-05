@@ -1,6 +1,10 @@
+require('dotenv').config();
+
 const app = require('./app');
 
 require('./database');
+
+
 
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
